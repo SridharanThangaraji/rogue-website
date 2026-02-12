@@ -5,7 +5,8 @@ import { FileText, ChevronRight } from 'lucide-react';
 export default async function DocsPage() {
     // In a real scenario, this would fetch from DB. For now, we mock if DB is empty or just show connection error handled gracefully.
     // Actually, let's try to fetch.
-    let docs = [];
+    type DocItem = { id: string; title: string; slug: string; description?: string; created_at: Date };
+    let docs: DocItem[] = [];
     try {
         docs = await getAllContent('documentation');
     } catch (e) {
@@ -28,7 +29,7 @@ export default async function DocsPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {docs.map((doc: any) => (
+                {docs.map((doc) => (
                     <Link key={doc.slug} href={`/docs/${doc.slug}`} className="hud-panel p-6 group hover:border-[var(--color-term-green)] transition-all">
                         <div className="flex justify-between items-start mb-4">
                             <FileText className="text-[var(--color-term-green)]" size={24} />

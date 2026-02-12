@@ -1,10 +1,15 @@
 import { getContentBySlug } from '@/lib/api';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { notFound } from 'next/navigation';
+
+interface DocContent {
+    title: string;
+    content: string;
+    updated_at?: Date;
+}
 
 export default async function DocPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    let doc: any = null;
+    let doc: DocContent | null = null;
 
     try {
         doc = await getContentBySlug(slug, 'documentation');

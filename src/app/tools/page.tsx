@@ -2,8 +2,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-    Search, Terminal, Shield, Zap, Lock, Globe, Eye,
-    Cpu, ChevronRight, Activity, Code, Database, Server, Info, ExternalLink, ArrowRight
+    Search, Zap, Lock, Globe, Eye,
+    ChevronRight, Activity, Code, Info, ArrowRight
 } from 'lucide-react'
 
 const categories = [
@@ -185,7 +185,7 @@ export default function PackagesPage() {
                                 <div className="terminal-header">
                                     <div className="flex gap-4">
                                         <span className="text-[var(--color-term-green)] font-black uppercase">{tool.category}</span>
-                                        <span className="text-gray-600 opacity-50">#ID_{Math.floor(Math.random() * 9000) + 1000}</span>
+                                        <span className="text-gray-600 opacity-50">#ID_{1000 + index}</span>
                                     </div>
                                     <div className="text-[var(--color-term-green)] text-[8px] font-bold select-none">{tool.version}</div>
                                 </div>

@@ -17,7 +17,11 @@
   --color-warning-amber: #ffb703;
   --color-alert-red: #ef233c;
 
-  /* Font variables are injected by next/font */
+  /* Local monospace font stacks for production optimization */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+  --font-display: 'Orbitron', 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-code: var(--font-mono);
 
   --scanline-color: rgba(0, 255, 159, 0.02);
   --grid-color: rgba(0, 255, 159, 0.05);

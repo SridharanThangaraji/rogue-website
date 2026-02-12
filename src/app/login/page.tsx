@@ -28,7 +28,7 @@ export default function LoginPage() {
                 const data = await res.json();
                 setError(data.message || 'Authentication failed');
             }
-        } catch (err) {
+        } catch {
             setError('Connection refused. Is the network secure?');
         } finally {
             setLoading(false);

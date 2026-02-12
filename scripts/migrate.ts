@@ -2,7 +2,6 @@ import { Client } from 'pg';
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
-import { fileURLToPath } from 'url';
 
 // Load environment variables
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });

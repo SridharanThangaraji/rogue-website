@@ -55,9 +55,9 @@ export default function AboutPage() {
                     <div className="relative bg-black border border-[var(--color-term-green-dim)] p-12 text-center">
                         <h2 className="text-2xl font-bold text-white mb-4 uppercase tracking-[0.2em] font-display">The Rogue Manifesto</h2>
                         <p className="italic text-gray-500 font-serif text-lg">
-                            "We do not build for the masses. We build for the specialists.
+                            &ldquo;We do not build for the masses. We build for the specialists.
                             For those who know the difference between a tool and a toy.
-                            Rogue Linux is the sharpest blade in your arsenal."
+                            Rogue Linux is the sharpest blade in your arsenal.&rdquo;
                         </p>
                     </div>
                 </div>
