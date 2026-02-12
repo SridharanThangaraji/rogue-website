@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { query } from '@/lib/db';
-import { comparePassword, signToken } from '@/lib/auth';
+import { signToken } from '@/lib/auth';
 import { cookies } from 'next/headers';
 
 export async function POST(req: Request) {

@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Terminal, Shield, Users, CreditCard, Menu, X, Hexagon, Activity, Radio, ShieldCheck } from 'lucide-react'
+import { Terminal, Shield, Users, Menu, X, Hexagon, ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 
 const navLinks = [

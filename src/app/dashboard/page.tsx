@@ -87,7 +87,7 @@ export default async function DashboardPage() {
     );
 }
 
-function StatCard({ title, value, icon, color }: any) {
+function StatCard({ title, value, icon, color }: { title: string; value: string | number; icon: React.ReactNode; color: string }) {
     return (
         <div className="hud-panel p-6 flex flex-col justify-between h-32 hover:border-[var(--color-term-green)] transition-colors group">
             <div className="flex justify-between items-start">
@@ -99,7 +99,7 @@ function StatCard({ title, value, icon, color }: any) {
     );
 }
 
-function ProgressBar({ label, value, color }: any) {
+function ProgressBar({ label, value, color }: { label: string; value: number; color: string }) {
     return (
         <div className="space-y-2">
             <div className="flex justify-between text-xs font-code text-gray-500">

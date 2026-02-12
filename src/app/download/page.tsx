@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Download, Shield, Cpu, Box, HardDrive, Terminal, CheckCircle2, Copy } from 'lucide-react'
+import { Download, Shield, Cpu, Box, HardDrive, CheckCircle2, Copy } from 'lucide-react'
 import Link from 'next/link'
 
 const platforms = [

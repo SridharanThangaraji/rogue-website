@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Terminal as TerminalIcon, Shield, Cpu, Zap, Lock, Globe, Activity, Eye, ArrowRight, Server, Hexagon, Code, Database, Radio } from 'lucide-react'
+import { Shield, Cpu, Zap, Lock, Globe, Activity, ArrowRight, Hexagon, Code, Database, Radio } from 'lucide-react'
 import Link from 'next/link'
 import Terminal from '@/components/ui/Terminal'
 import MatrixRain from '@/components/ui/MatrixRain'
@@ -50,7 +50,7 @@ export default function Home() {
 
                 <div className="hud-panel p-1 border-none bg-transparent mb-12">
                   <p className="text-2xl md:text-3xl text-gray-300 leading-tight font-light max-w-2xl border-l-[4px] border-[var(--color-term-green)] pl-10 py-4 italic">
-                    "The ghost in the silicon. The <span className="text-white font-black underline decoration-[var(--color-term-green)] underline-offset-8">Phantom Protocol</span> for digital sovereignty."
+                    &ldquo;The ghost in the silicon. The <span className="text-white font-black underline decoration-[var(--color-term-green)] underline-offset-8">Phantom Protocol</span> for digital sovereignty.&rdquo;
                   </p>
                 </div>
 

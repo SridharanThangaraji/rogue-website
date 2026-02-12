@@ -1,6 +1,6 @@
 import { getPackages, searchPackages } from '@/lib/api';
 import PackageSearch from '@/components/features/PackageSearch';
-import { Package, Download, Terminal, Clock, ShieldCheck } from 'lucide-react';
+import { Package, Download, Terminal } from 'lucide-react';
 import { Suspense } from 'react';
 
 export const metadata = {
@@ -16,7 +16,8 @@ export default async function PackagesPage({
     const params = await searchParams;
     const query = params.q || '';
 
-    let packages = [];
+    type PackageItem = { id: string; name: string; version: string; description: string; size?: string; download_url?: string; created_at?: Date };
+    let packages: PackageItem[] = [];
     try {
         if (query) {
             packages = await searchPackages(query);
@@ -63,7 +64,7 @@ export default async function PackagesPage({
                     <div className="col-span-2 text-right">Action</div>
                 </div>
 
-                {packages.map((pkg: any) => (
+                {packages.map((pkg) => (
                     <div key={pkg.id} className="group grid grid-cols-1 md:grid-cols-12 gap-4 p-6 md:p-4 items-center bg-[var(--color-panel)] border border-transparent hover:border-[var(--color-term-green)] transition-all">
                         <div className="col-span-4 flex items-center gap-3">
                             <Package className="text-gray-600 group-hover:text-[var(--color-term-green)] transition-colors" size={18} />

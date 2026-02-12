@@ -12,11 +12,15 @@ export default async function SecurityPage() {
         advisories = await getAdvisories();
     } catch (e) {
         console.error("DB Error:", e);
-        // Mock data
+        // Mock data with static dates for server-side rendering
+        const now = new Date('2026-02-12');
+        const yesterday = new Date('2026-02-11');
+        const twoDaysAgo = new Date('2026-02-10');
+        
         advisories = [
-            { id: '1', title: 'Kernel: Privilege Escalation in IO_URING', cve_id: 'CVE-2025-1337', description: 'A race condition in the io_uring subsystem allows local users to gain root privileges.', severity: 'critical', published_at: new Date() },
-            { id: '2', title: 'OpenSSH: Pre-auth double free', cve_id: 'CVE-2025-0982', description: 'Double free in the sshd pre-authentication phase.', severity: 'high', published_at: new Date(Date.now() - 86400000) },
-            { id: '3', title: 'sudo: Buffer overflow in env processing', cve_id: 'CVE-2025-2451', description: 'Potential buffer overflow when processing environment variables.', severity: 'medium', published_at: new Date(Date.now() - 172800000) },
+            { id: '1', title: 'Kernel: Privilege Escalation in IO_URING', cve_id: 'CVE-2025-1337', description: 'A race condition in the io_uring subsystem allows local users to gain root privileges.', severity: 'critical', published_at: now },
+            { id: '2', title: 'OpenSSH: Pre-auth double free', cve_id: 'CVE-2025-0982', description: 'Double free in the sshd pre-authentication phase.', severity: 'high', published_at: yesterday },
+            { id: '3', title: 'sudo: Buffer overflow in env processing', cve_id: 'CVE-2025-2451', description: 'Potential buffer overflow when processing environment variables.', severity: 'medium', published_at: twoDaysAgo },
         ];
     }
 
@@ -49,7 +53,7 @@ export default async function SecurityPage() {
             </div>
 
             <div className="space-y-4">
-                {advisories.map((advisory: any) => (
+                {advisories.map((advisory: { id: string; title: string; cve_id: string; description: string; severity: string; published_at: Date }) => (
                     <div key={advisory.id} className="hud-panel p-6 border-l-[4px] bg-[var(--color-panel)]" style={{ borderLeftColor: advisory.severity === 'critical' ? 'var(--color-alert-red)' : advisory.severity === 'high' ? 'var(--color-warning-amber)' : 'gray' }}>
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
                             <div className="flex items-center gap-3">

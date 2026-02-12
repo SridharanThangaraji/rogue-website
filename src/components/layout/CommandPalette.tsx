@@ -8,7 +8,7 @@ interface CommandItem {
     id: string;
     title: string;
     href: string;
-    icon: any;
+    icon: React.ComponentType<{ size?: number; className?: string }>;
     section: string;
 }
 
@@ -23,7 +23,6 @@ const commands: CommandItem[] = [
 export default function CommandPalette() {
     const [open, setOpen] = useState(false);
     const [query, setQuery] = useState('');
-    const [selected, setSelected] = useState(0);
 
     useEffect(() => {
         const down = (e: KeyboardEvent) => {
@@ -84,7 +83,7 @@ export default function CommandPalette() {
                                     <div className="px-2 py-1 text-[10px] text-gray-500 font-mono uppercase tracking-widest">
                                         System Navigation
                                     </div>
-                                    {filteredCommands.map((command, index) => (
+                                    {filteredCommands.map((command) => (
                                         <Link
                                             key={command.id}
                                             href={command.href}
